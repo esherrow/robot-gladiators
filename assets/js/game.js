@@ -7,11 +7,6 @@ var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(enemyNames);
-console.log(enemyNames.length);
-console.log(enemyNames[0]);
-console.log(enemyNames[3]);
-
 // fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
@@ -87,9 +82,6 @@ for (var i = 0; i < enemyNames.length; i++) {
     // reset enemyHealth before starting new fight
     enemyHealth = 50;
 
-    // use debugger to pause script from running and check what's going on at that moment in the code
-    // debugger;
-
     // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
     fight(pickedEnemyName);
 
@@ -100,16 +92,19 @@ for (var i = 0; i < enemyNames.length; i++) {
         shop();
     }
   }
+}
   // if player isn't alive, stop the game
   else {
     window.alert('You have lost your robot in battle! Game Over!');
     break;
   }
 }
-startGame();
+
 endGame();
 };
+
 var endGame = function() {
+  window.alert("The game has now ended.  Let's see how you did!");
   if (playerHealth > 0) {
     window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + ".");
   }
@@ -154,7 +149,7 @@ var shop = function() {
       break;
     case "LEAVE": //new case
     case "leave":
-      window.alert("Leaving the storeConfirm.");
+      window.alert("Leaving the store.");
       break;
     default:
       window.alert("You did not pick a valid option. Try again.");
@@ -162,3 +157,5 @@ var shop = function() {
       break;
     }
 };
+
+startGame();
